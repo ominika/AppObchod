@@ -1,9 +1,9 @@
 package com.example.dominika.appobchod;
 
-import android.content.Intent;
+import android.app.Activity;
 import android.content.res.AssetManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -14,20 +14,14 @@ import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
 
-public class FirstScreen extends AppCompatActivity {
-
+/**
+ * Created by Dominika on 21.04.2016.
+ */
+public class Doctor extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first_screen);
-
-        Button next = (Button) findViewById(R.id.doctor);
-        assert next != null;
-        next.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                setContentView(R.layout.doctor_1_ll);
-            }
-        });
+        setContentView(R.layout.doctor_1_ll);
     }
 
     public void order(View v) {
@@ -44,7 +38,7 @@ public class FirstScreen extends AppCompatActivity {
             for (int i = 0; i<row; i++) {
                 for (int j = 0; j<col; j++) {
                     Cell c = s.getCell(j,i);
-                    xx += "\t" + c.getContents();
+                    xx += c.getContents();
                 }
                 xx += "\n";
             }

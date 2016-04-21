@@ -25,7 +25,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="35dp"
         android:id="@+id/doctor"
-        android:text="Lekarz" />
+        android:text="Lekarz"
+        android:onClick="order"/>
 
     <Button
         android:layout_width="fill_parent"

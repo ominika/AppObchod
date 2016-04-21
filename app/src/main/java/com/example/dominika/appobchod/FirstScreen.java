@@ -2,6 +2,7 @@ package com.example.dominika.appobchod;
 
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -56,5 +57,20 @@ public class FirstScreen extends AppCompatActivity {
     public void display(String value) {
         TextView x = (TextView) findViewById(R.id.patients_hospital);
         x.setText(value);
+    }
+
+    public void addPatient(View v) {
+        setContentView(R.layout.add_patient);
+    }
+
+    public void showAlert(View v) {
+        AlertDialog.Builder ad = new AlertDialog.Builder(this);
+        ad.setMessage("Gratulacje lekarzu! Dodano pacjenta na oddział!").create();
+        ad.setTitle("Komunikat");
+        ad.show();
+    }
+
+    public void comeBack(View v) {
+        setContentView(R.layout.doctor_1_ll);
     }
 }

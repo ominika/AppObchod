@@ -31,6 +31,12 @@ public class FirstScreen extends AppCompatActivity {
         });
     }
 
+    public void DoctorButtonOnClick(View view)
+    {
+        Intent intent = new Intent(FirstScreen.this, ShowPatientList.class);
+        startActivity(intent);
+    }
+
     public void order(View v) {
         String xx = "";
 

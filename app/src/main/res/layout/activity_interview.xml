@@ -48,7 +48,8 @@
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/patientName"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -57,7 +58,8 @@
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/patientSurname" />
 
             <TextView
             android:layout_width="wrap_content"
@@ -66,7 +68,8 @@
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/patientPESEL" />
 
         </LinearLayout>
 
@@ -89,7 +92,8 @@
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/patientStreet" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -98,7 +102,8 @@
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/patientCity"/>
         </LinearLayout>
 
         <TextView
@@ -120,7 +125,8 @@
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/careName" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -129,7 +135,8 @@
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/careSurname"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -138,7 +145,8 @@
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/carePhone" />
         </LinearLayout>
 
         <TextView
@@ -160,7 +168,8 @@
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/interviewS"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -169,7 +178,8 @@
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/interviewA" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -178,7 +188,8 @@
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/interviewM" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -187,16 +198,18 @@
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/interviewP" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="L - lunch:"/>
+                android:text="L - lunch (ostatni posiłek):"/>
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/interviewL" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -205,10 +218,9 @@
 
             <EditText
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:id="@+id/interviewE" />
         </LinearLayout>
-
-
 
         <Button
             android:layout_width="fill_parent"
@@ -218,8 +230,4 @@
             android:layout_marginTop="30dp"
             android:onClick="showAlert"/>
     </LinearLayout>
-
-    <!--TODO gdyby nie przeprowadzono wywiadu, trzebaby oznaczac w spisie, że wywiad jest do przeprowadzenia-->
-
-
 </RelativeLayout>

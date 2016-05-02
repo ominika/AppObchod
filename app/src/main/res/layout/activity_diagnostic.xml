@@ -41,8 +41,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Zleć"
-                android:id="@+id/button"
-                android:layout_weight="0.08" />
+                android:id="@+id/SetInvestigationButton"
+                android:layout_weight="0.08"
+                android:onClick="SetInvestigationOnClick" />
 
         </LinearLayout>
 

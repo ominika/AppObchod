@@ -9,30 +9,47 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.dominika.appobchod.Diagnostic">
 
-    <SearchView
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchView2"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="376dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1">
 
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CITO"
-        android:id="@+id/switch1"
-        android:layout_below="@+id/searchView2"
-        android:layout_alignLeft="@+id/searchView2"
-        android:layout_alignStart="@+id/searchView2"
-        android:layout_alignRight="@+id/searchView2"
-        android:layout_alignEnd="@+id/searchView2" />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.10">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Zleć"
-        android:id="@+id/button"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+            <SearchView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/searchView2"
+                android:layout_weight="0.10" />
+
+            <Switch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CITO"
+                android:id="@+id/CITOSwitch"
+                android:layout_weight="0.02" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Zleć"
+                android:id="@+id/button"
+                android:layout_weight="0.08" />
+
+        </LinearLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView2"
+            android:layout_weight="0.10" />
+    </LinearLayout>
 </RelativeLayout>

@@ -2,6 +2,7 @@ package com.example.dominika.appobchod;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,35 +24,45 @@ import java.util.List;
 public class PatientListViewItemAdapter extends ArrayAdapter<String> {
 
     private int layout;
+    List <String> data = null;
+    Context context;
 
     public PatientListViewItemAdapter(Context context, int resource, List<String> objects) {
         super(context, resource, objects);
+        this.context = context;
         layout = resource;
+        data = objects;
     }
 
     @Override
-    public View getView(final int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, final View convertView, ViewGroup parent) {
+        View row = convertView;
         RowHolder myRowHolder = null;
         if(convertView == null){
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(layout,parent,false);
+            row = inflater.inflate(layout,parent,false);
             RowHolder rowHolder = new RowHolder();
-            rowHolder.patientName = (TextView) convertView.findViewById(R.id.list_item_text_view);
-            rowHolder.setInvestigationButton = (Button) convertView.findViewById(R.id.list_item_SetInvestigationButton);
-            rowHolder.setMedicamentButton = (Button) convertView.findViewById(R.id.list_item_SetMedicamentButton);
+            rowHolder.patientName = (TextView) row.findViewById(R.id.list_item_text_view);
+            rowHolder.patientName.setText(data.get(position));
+            rowHolder.setInvestigationButton = (Button) row.findViewById(R.id.list_item_SetInvestigationButton);
+            rowHolder.setMedicamentButton = (Button) row.findViewById(R.id.list_item_SetMedicamentButton);
+
             rowHolder.setInvestigationButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getContext(),"Buttpn was clicked for list item "+position, Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(),"Button was clicked for list item "+position, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context.getApplicationContext(), Diagnostic.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                    context.getApplicationContext().startActivity(intent);
                 }
             });
-            convertView.setTag(rowHolder);
+            row.setTag(rowHolder);
         }
         else{
-            myRowHolder = (RowHolder) convertView.getTag();
+            myRowHolder = (RowHolder) row.getTag();
             myRowHolder.patientName.setText(getItem(position));
         }
-        return super.getView(position, convertView, parent);
+        return row;
     }
 
     public class RowHolder{

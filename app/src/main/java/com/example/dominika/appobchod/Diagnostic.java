@@ -7,6 +7,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Switch;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -16,12 +17,12 @@ public class Diagnostic extends AppCompatActivity {
     String data[];
     ArrayList <String> icd9 = new ArrayList<String>();
     AutoCompleteTextView acTextView;
+    TextView nameTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diagnostic);
-
         data = new String []{
                 "A01 Badanie ogólne moczu (profil)",
                 "A03 Badanie płynu mózgowo-rdzeniowego",
@@ -39,10 +40,14 @@ public class Diagnostic extends AppCompatActivity {
                 "A23 Resztki pokarmowe w kale",
                 "A25 Urobilinogen w moczu"};
 
+
         acTextView = (AutoCompleteTextView) findViewById(R.id.InvestigationAutoCompleteTextView);
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.select_dialog_item, data);
         acTextView.setThreshold(1); // ile znaków by otrzymać sugestie
         acTextView.setAdapter(adapter);
+
+        nameTextView = (TextView) findViewById(R.id.NameTextView);
+        nameTextView.setText(getIntent().getExtras().getString("PATIENT_ID"));
 
         Button setInvestigationButton = (Button) findViewById(R.id.SetInvestigationButton);
         assert setInvestigationButton != null;
@@ -52,9 +57,7 @@ public class Diagnostic extends AppCompatActivity {
             }
         });
     }
-
     public void initList(){
-
         icd9 = new ArrayList<>(Arrays.asList(data));
     }
 

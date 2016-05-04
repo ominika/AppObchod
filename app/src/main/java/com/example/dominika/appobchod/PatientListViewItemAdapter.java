@@ -52,6 +52,18 @@ public class PatientListViewItemAdapter extends ArrayAdapter<String> {
                 public void onClick(View v) {
                     //Toast.makeText(getContext(),"Button was clicked for list item "+position, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context.getApplicationContext(), Diagnostic.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("PATIENT_ID", data.get(position));
+                    //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                    context.getApplicationContext().startActivity(intent);
+                }
+            });
+
+            rowHolder.setMedicamentButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    //Toast.makeText(getContext(),"Button was clicked for list item "+position, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context.getApplicationContext(), Medicament.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("PATIENT_ID", data.get(position));
                     //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
                     context.getApplicationContext().startActivity(intent);
                 }

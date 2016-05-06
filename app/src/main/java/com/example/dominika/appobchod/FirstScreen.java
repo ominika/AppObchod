@@ -60,7 +60,7 @@ public class FirstScreen extends AppCompatActivity {
     }
 
     public void addPatient(View v) {
-        setContentView(R.layout.add_patient);
+        setContentView(R.layout.activity_interview);
     }
 
     public void showAlert(View v) {

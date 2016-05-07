@@ -42,7 +42,8 @@
         android:id="@+id/tech_man"
         android:text="Zaopatrzenie"
         android:layout_below="@+id/nurse"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:onClick=""/>
 
     <!--TODO - czy robimy login, wszystko usunlam co z nim związane, tylko tu jest-->
     <LinearLayout

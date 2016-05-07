@@ -26,38 +26,19 @@ public class Interview extends AppCompatActivity {
         ad.setMessage("Utworzono interview").create();
         ad.setTitle("Komunikat");
         ad.show();
-
-        listenClicks();
     }
 
-    private void listenClicks() {
-        Button add_alergy = (Button) findViewById(R.id.button_add_alergy);
-        Button add_med = (Button) findViewById(R.id.button_add_med);
-        Button add_disease = (Button) findViewById(R.id.button_add_disease);
-        assert add_alergy != null;
-        assert add_med != null;
-        assert add_disease != null;
-
-        add_alergy.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                setContentView(R.layout.activity_alergy);
-            }
-        });
-
-        add_med.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                setContentView(R.layout.activity_alergy);
-            }
-        });
-
-        add_disease.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                setContentView(R.layout.activity_alergy);
-            }
-        });
-
-
+    public void showList(View v) {
+        setContentView(R.layout.activity_alergy);
     }
+
+    private void showAlert(View v) {
+        AlertDialog.Builder ad = new AlertDialog.Builder(this);
+        ad.setMessage("Kliknieto").create();
+        ad.setTitle("Komunikat");
+        ad.show();
+    }
+
 
     //TODO walidacja pesel
     /*private boolean isValidPesel(View v) {

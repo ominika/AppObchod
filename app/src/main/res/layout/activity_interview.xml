@@ -30,7 +30,8 @@
             android:text="Zapisz"
             android:background="#4CAF50"
             android:layout_marginTop="10dp"
-            android:onClick="showAlert"/>
+            android:id="@+id/button_save"
+            android:onClick="showList"/>
 
     </LinearLayout>
 
@@ -278,7 +279,7 @@
                         android:text="+"
                         android:background="#4CAF50"
                         android:id="@+id/button_add_disease"
-                        android:onClick="showList" />
+                        android:onClick="showList"/>
 
                     <TextView
                         android:layout_width="wrap_content"

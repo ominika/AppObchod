@@ -51,4 +51,6 @@ public class Doctor extends AppCompatActivity {
         TextView x = (TextView) findViewById(R.id.patients_hospital);
         x.setText(value);
     }
+
+
 }

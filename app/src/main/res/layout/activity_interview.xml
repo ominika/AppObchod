@@ -9,20 +9,35 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.dominika.appobchod.Interview">
 
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="Dane pacjenta"
-        android:textStyle="bold"
-        android:textSize="30dp"
-        android:id="@+id/add"/>
+        android:id="@+id/ll_1">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Dane pacjenta"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:id="@+id/add"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Zapisz"
+            android:background="#4CAF50"
+            android:layout_marginTop="10dp"
+            android:onClick="showAlert"/>
+
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/add">
+        android:layout_below="@+id/ll_1">
 
         <LinearLayout
             android:orientation="vertical"
@@ -32,7 +47,7 @@
             android:layout_below="@+id/add"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="52dp"
+            android:layout_marginTop="12dp"
             android:id="@+id/linearLayout2">
 
             <TextView
@@ -160,7 +175,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/carePhone" />
-
             </LinearLayout>
 
             <TextView
@@ -205,7 +219,8 @@
                         android:layout_height="38dp"
                         android:text="+"
                         android:background="#4CAF50"
-                        android:id="@+id/button_add_alergy" />
+                        android:id="@+id/button_add_alergy"
+                        android:onClick="showList"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -213,7 +228,6 @@
                         android:text="brak"
                         android:paddingLeft="12dp"
                         android:id="@+id/textView_add_alergy"/>
-
                 </LinearLayout>
 
                 <TextView
@@ -234,7 +248,8 @@
                         android:layout_height="38dp"
                         android:text="+"
                         android:background="#4CAF50"
-                        android:id="@+id/button_add_med" />
+                        android:id="@+id/button_add_med"
+                        android:onClick="showList"/>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -242,7 +257,6 @@
                         android:text="brak"
                         android:paddingLeft="12dp"
                         android:id="@+id/textView_add_med"/>
-
                 </LinearLayout>
 
                 <TextView
@@ -263,7 +277,8 @@
                         android:layout_height="38dp"
                         android:text="+"
                         android:background="#4CAF50"
-                        android:id="@+id/button_add_disease" />
+                        android:id="@+id/button_add_disease"
+                        android:onClick="showList" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -294,15 +309,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/interviewE" />
-
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Zapisz"
-                    android:background="#4CAF50"
-                    android:layout_marginTop="30dp"
-                    android:onClick="showAlert"/>
-
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

@@ -1,22 +1,41 @@
 package com.example.dominika.appobchod;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-public class Interview extends AppCompatActivity {
+public class Interview extends AppCompatActivity /*implements android.widget.CompoundButton.OnCheckedChangeListener */{
+
+    ListView lv;
+    ArrayList<Element> elementList;
+    AdapterForElements adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interview);
 
+        AlertDialog.Builder ad = new AlertDialog.Builder(this);
+        ad.setMessage("Utworzono interview").create();
+        ad.setTitle("Komunikat");
+        ad.show();
+
         listenClicks();
+
+        lv = (ListView) findViewById(R.id.listView);
+        displayElement();
     }
 
     private void listenClicks() {
@@ -44,8 +63,39 @@ public class Interview extends AppCompatActivity {
                 setContentView(R.layout.activity_alergy);
             }
         });
+
+
     }
 
+    private void displayElement() {
+        elementList = new ArrayList<>();
+        elementList.add(new Element("Czekolada","0001"));
+        elementList.add(new Element("Muzyka","0002"));
+        elementList.add(new Element("Kurz","0003"));
+        elementList.add(new Element("Aminokaslofoe","0004"));
+        elementList.add(new Element("Manertlopyl","0005"));
+
+        adapter = new AdapterForElements(elementList, this);
+        ListView listView = (ListView) findViewById(R.id.listView);
+        listView.setAdapter(adapter);
+    }
+
+    //@Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        int pos = lv.getPositionForView(buttonView);
+        if (pos != ListView.INVALID_POSITION) {
+            Element e = elementList.get(pos);
+            e.setChecked(isChecked);
+
+            Toast.makeText(this, "Wybrano element: " + e.getName(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    /*private void showLogin(View v) {
+        TextView view = (TextView) findViewById(R.id.textView);
+        view.setText("Add your text here");
+        view.setVisibility(View.VISIBLE);
+    }*/
     //TODO walidacja pesel
     /*private boolean isValidPesel(View v) {
         boolean check = false;

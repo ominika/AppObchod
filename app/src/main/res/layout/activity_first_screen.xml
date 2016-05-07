@@ -25,8 +25,7 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="35dp"
         android:id="@+id/doctor"
-        android:text="Lekarz"
-        android:onClick="showLogin"/>
+        android:text="Lekarz" />
 
     <Button
         android:layout_width="fill_parent"
@@ -45,6 +44,7 @@
         android:layout_below="@+id/nurse"
         android:layout_centerHorizontal="true" />
 
+    <!--TODO - czy robimy login, wszystko usunlam co z nim związane, tylko tu jest-->
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="646dp"
@@ -83,7 +83,5 @@
             android:layout_marginTop="30dp"
             android:onClick="showAlert"/>
     </LinearLayout>
-
-
 
 </RelativeLayout>

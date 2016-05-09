@@ -1,5 +1,7 @@
 package com.example.dominika.appobchod;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -28,8 +30,9 @@ public class Interview extends AppCompatActivity {
         ad.show();
     }
 
-    public void showList(View v) {
-        setContentView(R.layout.activity_alergy);
+    public void showList2(View v) {
+        Intent intent = new Intent(Interview.this, Alergy.class);
+        startActivity(intent);
     }
 
     private void showAlert(View v) {
@@ -39,25 +42,5 @@ public class Interview extends AppCompatActivity {
         ad.show();
     }
 
-
     //TODO walidacja pesel
-    /*private boolean isValidPesel(View v) {
-        boolean check = false;
-        EditText psl = (EditText) findViewById(R.id.patientPESEL);
-        String pesel = psl.getText().toString();
-
-        if(pesel.matches("[0-9]{11}$")) {
-            if(pesel.length() < 6 || pesel.length() > 13) {
-                check = false;
-                Log.e("Validation","Not Valid PESEL");
-            }
-            else {
-                check = true;
-            }
-        }
-        else {
-            check=false;
-        }
-        return check;
-    }*/
 }

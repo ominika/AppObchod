@@ -25,7 +25,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginTop="35dp"
         android:id="@+id/doctor"
-        android:text="Lekarz" />
+        android:text="Lekarz"
+        android:onClick="showInterview"/>
 
     <Button
         android:layout_width="fill_parent"
@@ -34,7 +35,8 @@
         android:text="Pielęgniarka"
         android:layout_below="@+id/doctor"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        />
 
     <Button
         android:layout_width="fill_parent"

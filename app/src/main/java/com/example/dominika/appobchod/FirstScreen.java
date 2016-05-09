@@ -1,5 +1,6 @@
 package com.example.dominika.appobchod;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,17 +12,11 @@ public class FirstScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_screen);
-
-        listenClicks();
     }
 
-    private void listenClicks() {
-        Button btn = (Button) findViewById(R.id.doctor);
-        assert btn != null;
-        btn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                setContentView(R.layout.activity_interview);
-            }
-        });
+    public void showInterview(View v) {
+        //setContentView(R.layout.activity_interview);
+        Intent intent = new Intent(FirstScreen.this, Interview.class);
+        startActivity(intent);
     }
 }

@@ -46,6 +46,8 @@ public class PatientListViewItemAdapter extends ArrayAdapter<String> {
             rowHolder.patientName.setText(data.get(position));
             rowHolder.setInvestigationButton = (Button) row.findViewById(R.id.list_item_SetInvestigationButton);
             rowHolder.setMedicamentButton = (Button) row.findViewById(R.id.list_item_SetMedicamentButton);
+            rowHolder.dischargeButton = (Button) row.findViewById(R.id.list_item_DischargeButton);
+            rowHolder.showPatientCardButton = (Button) row.findViewById(R.id.list_item_ShowPatientCardButton);
 
             rowHolder.setInvestigationButton.setOnClickListener(new View.OnClickListener(){
                 @Override
@@ -61,10 +63,25 @@ public class PatientListViewItemAdapter extends ArrayAdapter<String> {
             rowHolder.setMedicamentButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    //Toast.makeText(getContext(),"Button was clicked for list item "+position, Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(context.getApplicationContext(), Medicament.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.putExtra("PATIENT_ID", data.get(position));
-                    //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+                    context.getApplicationContext().startActivity(intent);
+                }
+            });
+            rowHolder.dischargeButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context.getApplicationContext(), FirstScreen.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("PATIENT_ID", data.get(position));
+                    context.getApplicationContext().startActivity(intent);
+                }
+            });
+
+            rowHolder.showPatientCardButton.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(context.getApplicationContext(), FirstScreen.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    intent.putExtra("PATIENT_ID", data.get(position));
                     context.getApplicationContext().startActivity(intent);
                 }
             });
@@ -78,9 +95,10 @@ public class PatientListViewItemAdapter extends ArrayAdapter<String> {
     }
 
     public class RowHolder{
-        //PatientListViewItem patientListViewItem;
         TextView patientName;
         Button setInvestigationButton;
         Button setMedicamentButton;
+        Button dischargeButton;
+        Button showPatientCardButton;
     }
 }

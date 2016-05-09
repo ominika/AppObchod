@@ -58,7 +58,8 @@ public class ShowPatientList extends AppCompatActivity {
 
     public void initList()
     {
-        items = new String[]{"Dominika Muzyka",     "Beata Szturemska",     "Jan Nowak",        "Patryk Gliszczyński",      "Małgorzata Janicka"};
+        items = new String[]{"Dominika Muzyka",     "Beata Szturemska",     "Jan Nowak",        "Patryk Gliszczyński",      "Małgorzata Janicka",
+                             "Marek Muzyka",        "Patrycja Nowakowska"};
         patients = new ArrayList<>(Arrays.asList(items));
         //for(int i=0; i<9; i++)
         //data.add(new PatientListViewItem(i,cars[i]));

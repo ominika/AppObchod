@@ -23,14 +23,6 @@ public class FirstScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_screen);
-
-        Button next = (Button) findViewById(R.id.doctor);
-        assert next != null;
-        next.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                setContentView(R.layout.doctor_1_ll);
-            }
-        });
 /*
         Button next2 = (Button) findViewById(R.id.nurse);
         assert next2 != null;
@@ -42,8 +34,13 @@ public class FirstScreen extends AppCompatActivity {
             }
         });*/
     }
-
     public void DoctorButtonOnClick(View view)
+    {
+        Intent intent = new Intent(FirstScreen.this, Interview.class);
+        startActivity(intent);
+    }
+
+    public void NurseButtonOnClick(View view)
     {
         Intent intent = new Intent(FirstScreen.this, ShowPatientList.class);
         startActivity(intent);
@@ -53,54 +50,5 @@ public class FirstScreen extends AppCompatActivity {
     {
         Intent intent = new Intent(FirstScreen.this, ShowAllerginList.class);
         startActivity(intent);
-    }
-
-    public void order(View v) {
-        String xx = "";
-
-        try {
-            AssetManager am = getAssets();
-            InputStream is = am.open("patient_hospital.xls");
-            Workbook wb = Workbook.getWorkbook(is);
-            Sheet s = wb.getSheet(0);
-            int row = s.getRows();
-            int col = s.getColumns();
-
-            for (int i = 0; i<row; i++) {
-                for (int j = 0; j<col; j++) {
-                    Cell c = s.getCell(j,i);
-                    xx += "\t" + c.getContents();
-                }
-                xx += "\n";
-            }
-            display(xx);
-        } catch (Exception e) {
-
-        }
-    }
-    public void display(String value) {
-        TextView x = (TextView) findViewById(R.id.patients_hospital);
-        x.setText(value);
-    }
-
-    public void addPatient(View v) {
-        setContentView(R.layout.activity_interview);
-    }
-
-    public void showAlert(View v) {
-        AlertDialog.Builder ad = new AlertDialog.Builder(this);
-        ad.setMessage("Gratulacje lekarzu! Dodano pacjenta na oddział!").create();
-        ad.setTitle("Komunikat");
-        ad.show();
-    }
-
-    public void comeBack(View v) {
-        setContentView(R.layout.doctor_1_ll);
-    }
-
-    private void showLogin(View v) {
-        TextView view = (TextView) findViewById(R.id.textView);
-        view.setText("Add your text here");
-        view.setVisibility(View.VISIBLE);
     }
 }

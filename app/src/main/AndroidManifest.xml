@@ -31,7 +31,6 @@
         <activity android:name=".Discharge"></activity>
         <activity android:name=".ShowAllerginList"></activity>
         <activity android:name=".Interview" />
-        <activity android:name=".Alergy"></activity>
     </application>
 
 </manifest>

@@ -84,7 +84,7 @@ public class FirstScreen extends AppCompatActivity {
     }
 
     public void addPatient(View v) {
-        setContentView(R.layout.add_patient);
+        setContentView(R.layout.activity_interview);
     }
 
     public void showAlert(View v) {
@@ -96,5 +96,11 @@ public class FirstScreen extends AppCompatActivity {
 
     public void comeBack(View v) {
         setContentView(R.layout.doctor_1_ll);
+    }
+
+    private void showLogin(View v) {
+        TextView view = (TextView) findViewById(R.id.textView);
+        view.setText("Add your text here");
+        view.setVisibility(View.VISIBLE);
     }
 }

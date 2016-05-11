@@ -28,6 +28,8 @@
 
         <activity android:name=".AllerginListViewItem" />
         <activity android:name=".ShowAllerginList"></activity>
+        <activity android:name=".Interview" />
+        <activity android:name=".Alergy"></activity>
     </application>
 
 </manifest>

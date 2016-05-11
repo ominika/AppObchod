@@ -72,10 +72,16 @@ public class ShowPatientList extends AppCompatActivity {
             initList();
         editTextLastLength = textToSearch.length();
         for(String item:items){
-            if(!item.contains(textToSearch))
+            if(!item.toLowerCase().contains(textToSearch.toLowerCase()))
                 patients.remove(item);
         }
 
         adapter.notifyDataSetChanged();
+    }
+
+    public void AddNewPatient(View view)
+    {
+        Intent intent = new Intent(ShowPatientList.this, Interview.class);
+        startActivity(intent);
     }
 }

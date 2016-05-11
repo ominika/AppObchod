@@ -27,6 +27,8 @@
             android:value="@integer/google_play_services_version" />
 
         <activity android:name=".AllerginListViewItem" />
+        <activity android:name=".ShowAllerginList" />
+        <activity android:name=".Discharge"></activity>
         <activity android:name=".ShowAllerginList"></activity>
         <activity android:name=".Interview" />
         <activity android:name=".Alergy"></activity>

@@ -71,7 +71,7 @@ public class PatientListViewItemAdapter extends ArrayAdapter<String> {
             rowHolder.dischargeButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(context.getApplicationContext(), FirstScreen.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    Intent intent = new Intent(context.getApplicationContext(), Discharge.class).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     intent.putExtra("PATIENT_ID", data.get(position));
                     context.getApplicationContext().startActivity(intent);
                 }

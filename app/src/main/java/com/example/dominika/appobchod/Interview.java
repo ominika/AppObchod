@@ -1,5 +1,6 @@
 package com.example.dominika.appobchod;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,20 +17,20 @@ public class Interview extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_interview);
 
-        listenClicks();
+        //listenClicks();
     }
-
+/*
     private void listenClicks() {
         Button add_alergy = (Button) findViewById(R.id.button_add_alergy);
         Button add_med = (Button) findViewById(R.id.button_add_med);
         Button add_disease = (Button) findViewById(R.id.button_add_disease);
-        assert add_alergy != null;
+        //assert add_alergy != null;
         assert add_med != null;
         assert add_disease != null;
 
         add_alergy.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                setContentView(R.layout.activity_alergy);
+                ShowAllerginScreen(view);
             }
         });
 
@@ -44,6 +45,11 @@ public class Interview extends AppCompatActivity {
                 setContentView(R.layout.activity_alergy);
             }
         });
+    }*/
+
+    public void ShowAllerginScreenLOL(View w){
+        Intent intent = new Intent(Interview.this, ShowAllerginList.class);
+        startActivity(intent);
     }
 
     //TODO walidacja pesel

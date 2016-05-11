@@ -206,7 +206,7 @@
                         android:text="+"
                         android:background="#4CAF50"
                         android:id="@+id/button_add_alergy"
-                        />
+                        android:onClick="ShowAllerginScreenLOL" />
 
                     <TextView
                         android:layout_width="wrap_content"

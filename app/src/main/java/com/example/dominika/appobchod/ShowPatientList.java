@@ -7,17 +7,21 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ShowPatientList extends AppCompatActivity {
+public class ShowPatientList extends AppCompatActivity implements AsyncResponse {
 
+    //TODO private, public ...
     private ListView list;
     String[] items;
     ArrayList<String> patients = new ArrayList<String>();
@@ -25,15 +29,18 @@ public class ShowPatientList extends AppCompatActivity {
     PatientListViewItemAdapter adapter;
     int editTextLastLength;
 
+    ConnectionShowPatientList asyncTask = new ConnectionShowPatientList(this);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_patient_list);
+
         list = (ListView) findViewById(R.id.listView);
         editText = (EditText)findViewById(R.id.findPatientTextEdit);
         editTextLastLength = 0;
 
-        initList();
+        createConnection();
 
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -56,11 +63,26 @@ public class ShowPatientList extends AppCompatActivity {
         });
     }
 
+    public void createConnection() {
+        asyncTask.delegate = this;
+        asyncTask.execute();
+    }
+
+    public void processFinish(String[] itemsBack){
+        items = itemsBack;
+        patients = new ArrayList<>(Arrays.asList(items));
+
+        adapter = new PatientListViewItemAdapter(this, R.layout.patient_listview_item, patients);
+        list.setAdapter(adapter);
+    }
+
     public void initList()
     {
+        /* TODELETE
         items = new String[]{"Dominika Muzyka",     "Beata Szturemska",     "Jan Nowak",        "Patryk Gliszczyński",      "Małgorzata Janicka",
-                             "Marek Muzyka",        "Patrycja Nowakowska"};
+                             "Marek Muzyka",        "Patrycja Nowakowska"};*/
         patients = new ArrayList<>(Arrays.asList(items));
+        //TODELETE
         //for(int i=0; i<9; i++)
         //data.add(new PatientListViewItem(i,cars[i]));
         adapter = new PatientListViewItemAdapter(this, R.layout.patient_listview_item, patients);

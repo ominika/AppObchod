@@ -23,17 +23,8 @@ public class FirstScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_screen);
-/*
-        Button next2 = (Button) findViewById(R.id.nurse);
-        assert next2 != null;
-        next2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                //setContentView(R.layout.activity_show_patient_list_2);
-                Intent intent = new Intent(FirstScreen.this, ShowAllerginList.class);
-                startActivity(intent);
-            }
-        });*/
     }
+
     public void DoctorButtonOnClick(View view)
     {
         Intent intent = new Intent(FirstScreen.this, Interview.class);

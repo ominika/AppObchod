@@ -13,10 +13,11 @@ import java.util.Collection;
 import java.util.Collections;
 /*
 TODO: Musisz sobie dodać w widoku teraz dwa przyciski
+tu Muzyka - kto to ma dodać???
 ZAPISZ który przeleci przez wszystkie elementy, sprawdzi czy są selected i doda do bazy
 DODAJ nowy allergen i okno wprowadzenia nowego alergeniu
  */
-public class ShowAllerginList extends AppCompatActivity {
+public class ShowAllergensList extends AppCompatActivity {
 
     private ListView list;
     String[] items;

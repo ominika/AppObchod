@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ShowPatientList extends AppCompatActivity implements AsyncResponse {
+public class ShowPatientsList extends AppCompatActivity implements AsyncResponse {
 
     //TODO private, public ...
     private ListView list;
